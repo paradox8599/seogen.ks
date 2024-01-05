@@ -2,7 +2,7 @@
 
 import { createYoga } from "graphql-yoga";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { keystoneContext } from "../../keystone/context";
+import { keystoneContext } from "@/lib/keystone";
 
 // An example of how to setup your own yoga graphql server
 // using the generated Keystone GraphQL schema.

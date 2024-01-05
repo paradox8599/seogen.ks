@@ -26,7 +26,6 @@ export async function authenticateUserWithPassword(variables: {
             item {
               name
               email
-              role
             }
             sessionToken
           }
