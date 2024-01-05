@@ -45,11 +45,14 @@ const { withAuth } = createAuth({
     // if there are no items in the database, by configuring this field
     //   you are asking the Keystone AdminUI to create a new user
     //   providing inputs for these fields
-    fields: ['name', 'email', 'password'],
-
-    // it uses context.sudo() to do this, which bypasses any access control you might have
-    //   you shouldn't use this in production
+    skipKeystoneWelcome: true,
+    fields: ["name"],
+    itemData: {
+      email: "admin@me.com",
+      password: "admin@me.com",
+    },
   },
+
 });
 
 // statelessSessions uses cookies for session tracking

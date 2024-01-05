@@ -1,3 +1,5 @@
+import { AINames, AIPlatform } from "./types/ai";
+
 // KeystoneJS server config
 type DB_PROVIDER_TYPE = "sqlite" | "mysql" | "postgresql";
 
@@ -17,3 +19,19 @@ export const GRAPHQL_PATH =
   process.env.NEXT_PUBLIC_GRAPHQL_PATH ?? "/api/graphql";
 
 export const GRAPHQL_ENDPOINT = new URL(GRAPHQL_PATH, SERVER_URL);
+
+export const OLLAMA_URL_CHAT = new URL(process.env.OLLAMA_URL_CHAT ?? "http://localhost:11434/api/chat")
+export const OPENAI_URL_CHAT = new URL(process.env.OPENAI_URL_CHAT ?? "https://api.openai.com/v1/chat/completions")
+export const OPENAI_API_TOKEN = process.env.OPENAI_API_TOKEN;
+export const OPENAI_PLATFORM: AIPlatform = {
+  name: AINames.openai,
+  url: OPENAI_URL_CHAT,
+  token: OPENAI_API_TOKEN ?? "",
+};
+
+export const OLLAMA_PLATFORM: AIPlatform = {
+  name: AINames.ollama,
+  url: OLLAMA_URL_CHAT,
+  token: "",
+}
+

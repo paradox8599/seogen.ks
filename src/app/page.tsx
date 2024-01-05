@@ -1,12 +1,10 @@
-import { keystoneContext } from "@/keystone/context";
-import { Button } from "@nextui-org/button";
+import { keystoneContext } from "@/lib/keystoneContext";
 
 export default async function Home() {
   const data = await keystoneContext.query.User.count();
   return (
     <>
-      <Button>NextUI Button</Button>
-      <p>users: {JSON.stringify(data)}</p>
+      <p>{JSON.stringify(data)}</p>
     </>
   );
 }
