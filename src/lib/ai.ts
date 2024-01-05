@@ -1,5 +1,5 @@
 import { AINames, AIPlatform, AIRequest, AIResponse } from "@/lib/types/ai";
-import { OLLAMA_PLATFORM, OPENAI_PLATFORM } from "../variables";
+import { OLLAMA_PLATFORM, OPENAI_PLATFORM } from "./variables";
 
 export type AskFn = (request: AIRequest) => Promise<AIResponse>;
 
